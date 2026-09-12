@@ -9,3 +9,10 @@
 [build.environment]
   # next@16 requires node >=20.9.0
   NODE_VERSION = "22"
+
+# The Next.js Runtime is normally auto-installed when Netlify detects the
+# framework at project creation. It didn't here (the base directory wasn't
+# pointing at client/ yet), so declare it explicitly. Left unpinned so Netlify
+# keeps it up to date, per their docs.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
