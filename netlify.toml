@@ -1,0 +1,11 @@
+# Build settings for Netlify. These override the dashboard's build settings.
+# The Next.js app lives in client/, not the repo root, so `base` points there.
+# All paths are relative to `base`, which is why `publish` is ".next".
+[build]
+  base = "client"
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # next@16 requires node >=20.9.0
+  NODE_VERSION = "22"
