@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #17150f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-cream: #ffffff;
+  --color-sand: #f5f2ed;
+  --color-ink: #17150f;
+  --color-muted: #6f685d;
+  --color-gold: #b4883f;
+  --color-forest: #2f3a2c;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-playfair);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------------------------------------------------------
+   Motion + surface treatments.
+   All of it is progressive: scroll-driven animation only runs where
+   the browser supports it, and everything is disabled for users who
+   prefer reduced motion. Content is fully visible without any of it.
+   --------------------------------------------------------------- */
+
+::selection {
+  background: rgba(180, 136, 63, 0.25);
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee-x {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes header-dock {
+  to {
+    background-color: rgba(250, 248, 244, 0.8);
+    backdrop-filter: blur(14px) saturate(1.4);
+    border-color: rgba(23, 21, 15, 0.08);
+    box-shadow: 0 12px 32px -26px rgba(23, 21, 15, 0.55);
+  }
+}
+
+.header-shell {
+  border-bottom: 1px solid transparent;
+}
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .header-shell {
+      animation: header-dock linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 40px 150px;
+    }
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+
+.marquee {
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 7%,
+    #000 93%,
+    transparent
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-x 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* While a nav panel is open the bar goes solid, so the panel reads as an
+   extension of it rather than a card floating underneath. */
+header:has(nav > div:hover) .header-shell,
+header:has(nav > div:focus-within) .header-shell {
+  background-color: #ffffff !important;
+  border-color: rgba(23, 21, 15, 0.08) !important;
+  backdrop-filter: none !important;
+}
+
+/* Mobile drawer fades in on mount; no JS state needed for the transition. */
+#mobile-menu {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+@starting-style {
+  #mobile-menu {
+    opacity: 0;
+  }
+}
