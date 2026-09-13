@@ -86,7 +86,7 @@ export function PrintsPanel() {
         className="group/promo relative flex min-h-[276px] flex-col justify-end overflow-hidden rounded-xl bg-sand p-4 ring-1 ring-ink/5"
       >
         <Image
-          src={images.inversion}
+          src={images.coupall}
           alt=""
           fill
           sizes="280px"
@@ -98,7 +98,7 @@ export function PrintsPanel() {
             New release
           </p>
           <p className="mt-1.5 font-display text-[17px] leading-snug text-white">
-            Inversion II — edition of 15
+            Coupall in Spate — edition of 15
           </p>
           <span className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-cream px-3.5 py-1.5 text-[11px] font-medium text-ink">
             View print

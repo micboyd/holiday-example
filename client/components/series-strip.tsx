@@ -16,19 +16,13 @@ export function SeriesStrip() {
   return (
     <section className="pb-16 lg:pb-24">
       <Container>
-        <div className="flex flex-wrap items-end justify-between gap-4 pb-8">
-          <div>
-            <p className="text-[11px] font-medium tracking-[0.2em] text-gold uppercase">
-              The archive
-            </p>
-            <h2 className="mt-3 font-display text-4xl font-normal tracking-[-0.01em] text-ink lg:text-[42px]">
-              Every series
-            </h2>
-          </div>
-          <p className="max-w-[38ch] text-[13px] leading-relaxed text-muted">
-            Six bodies of work made between 2022 and 2024. Swipe through, or
-            hover to look closer.
+        <div className="pb-8">
+          <p className="text-[11px] font-medium tracking-[0.2em] text-gold uppercase">
+            The archive
           </p>
+          <h2 className="mt-3 font-display text-4xl font-normal tracking-[-0.01em] text-ink lg:text-[42px]">
+            Every series
+          </h2>
         </div>
       </Container>
 

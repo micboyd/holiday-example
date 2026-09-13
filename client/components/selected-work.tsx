@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { series } from "@/lib/series";
 import { Container } from "./container";
@@ -23,25 +22,13 @@ export function SelectedWork() {
   return (
     <section className="pt-16 pb-16 lg:pt-24 lg:pb-24">
       <Container>
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="text-[11px] font-medium tracking-[0.2em] text-gold uppercase">
-              Recent series
-            </p>
-            <h2 className="mt-3 font-display text-4xl font-normal tracking-[-0.01em] text-ink lg:text-[42px]">
-              Selected work
-            </h2>
-          </div>
-
-          <Link
-            href="#"
-            className="group flex items-center gap-3 text-sm text-ink/80 transition-colors hover:text-ink"
-          >
-            View the archive
-            <span className="grid size-9 place-items-center rounded-full border border-ink/20 transition-all group-hover:border-ink group-hover:bg-ink group-hover:text-cream">
-              <ArrowRight className="size-4" strokeWidth={1.75} />
-            </span>
-          </Link>
+        <div>
+          <p className="text-[11px] font-medium tracking-[0.2em] text-gold uppercase">
+            Recent series
+          </p>
+          <h2 className="mt-3 font-display text-4xl font-normal tracking-[-0.01em] text-ink lg:text-[42px]">
+            Selected work
+          </h2>
         </div>
 
         <div className="reveal mt-10 grid gap-4 sm:grid-cols-2 lg:h-[640px] lg:grid-cols-4 lg:grid-rows-2">

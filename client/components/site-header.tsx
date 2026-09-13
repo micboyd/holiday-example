@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "./container";
+import { CartButton } from "./cart-button";
 import { Logo } from "./logo";
 import { MobileMenu } from "./mobile-menu";
 import { NavMenu } from "./nav-menu";
@@ -11,15 +12,17 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40">
       {/* Transparent at rest; docks into a blurred bar once you scroll. */}
-      <div className="header-shell">
-        <Container className="relative flex items-center justify-between gap-6 py-5">
-          <Logo className="text-ink" compact />
+      <div className="header-shell relative">
+        <Container className="flex items-center justify-between gap-6 py-5">
+          <Link href="/" className="transition-opacity hover:opacity-70">
+            <Logo className="text-ink" />
+          </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">
-            <NavMenu label="Work">
+            <NavMenu label="Work" href="#">
               <WorkPanel />
             </NavMenu>
-            <NavMenu label="Prints">
+            <NavMenu label="Prints" href="/prints">
               <PrintsPanel />
             </NavMenu>
             {plainItems.map((item) => (
@@ -34,12 +37,7 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Link
-              href="#"
-              className="hidden rounded-full bg-ink px-6 py-2.5 text-sm font-medium text-cream transition-colors hover:bg-ink/85 sm:inline-flex"
-            >
-              Enquire
-            </Link>
+            <CartButton />
             <MobileMenu />
           </div>
         </Container>

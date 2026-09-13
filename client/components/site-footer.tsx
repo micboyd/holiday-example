@@ -12,7 +12,13 @@ import {
 const columns = [
   {
     heading: "Work",
-    links: ["Moraine", "Above the Cloud", "Granite", "Kluane", "The archive"],
+    links: [
+      "Storr",
+      "Achtriochtan",
+      "Three Sisters",
+      "Luskentyre",
+      "The archive",
+    ],
   },
   {
     heading: "Prints",
@@ -101,10 +107,12 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 flex flex-col gap-6 border-t border-cream/10 pt-8 lg:flex-row lg:items-center lg:justify-between">
-          <Logo compact className="text-cream" />
+          <Link href="/" className="transition-opacity hover:opacity-80">
+            <Logo className="text-cream" showTagline />
+          </Link>
 
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[12px] text-cream/40">
-            <span>© 2026 Roamora</span>
+            <span>© 2026 Michael Boyd</span>
             <Link href="#" className="transition-colors hover:text-cream/70">
               Privacy
             </Link>

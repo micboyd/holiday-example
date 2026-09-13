@@ -1,31 +1,22 @@
-import { Aperture } from "lucide-react";
-
+/**
+ * Personal wordmark. A photographer's own name carries the brand, so this is
+ * purely typographic — no icon competing with it.
+ */
 export function Logo({
   className = "",
-  compact = false,
+  showTagline = false,
 }: {
   className?: string;
-  compact?: boolean;
+  showTagline?: boolean;
 }) {
   return (
-    <div className={`flex items-center gap-2.5 ${className}`}>
-      {compact ? (
-        <Aperture className="size-5" strokeWidth={1.5} />
-      ) : (
-        <span className="grid size-9 place-items-center rounded-full bg-ink text-cream">
-          <Aperture className="size-4" strokeWidth={1.5} />
-        </span>
-      )}
-      <div className="leading-none">
-        <div className="font-display text-xl font-semibold tracking-tight">
-          Roamora
+    <div className={`leading-none ${className}`}>
+      <div className="font-display text-xl tracking-tight">Michael Boyd</div>
+      {showTagline && (
+        <div className="mt-1.5 text-[9px] tracking-[0.18em] uppercase opacity-55">
+          Landscape Photography
         </div>
-        {!compact && (
-          <div className="mt-1 text-[9px] tracking-[0.18em] uppercase opacity-55">
-            Landscape Photography
-          </div>
-        )}
-      </div>
+      )}
     </div>
   );
 }

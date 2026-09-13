@@ -1,38 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Frame, Ruler } from "lucide-react";
-import { images } from "@/lib/images";
+import { formatGBP } from "@/lib/prints";
+import { prints as catalogue } from "@/lib/prints";
 import { Container } from "./container";
 
-const prints = [
-  {
-    title: "Wenkchemna, First Light",
-    series: "Moraine · 2024",
-    image: images.moraine,
-    size: "60 × 90 cm",
-    paper: "Cotton rag",
-    price: "£280",
-    edition: "Edition of 25",
-  },
-  {
-    title: "Inversion II",
-    series: "Above the Cloud · 2024",
-    image: images.inversion,
-    size: "50 × 75 cm",
-    paper: "Baryta",
-    price: "£240",
-    edition: "Edition of 15",
-  },
-  {
-    title: "Valley, Late Spruce",
-    series: "Kluane · 2023",
-    image: images.kluane,
-    size: "75 × 100 cm",
-    paper: "Cotton rag",
-    price: "£360",
-    edition: "Open edition",
-  },
-];
+const featured = catalogue.slice(0, 3);
 
 export function PrintShop() {
   return (
@@ -48,7 +21,7 @@ export function PrintShop() {
             </h2>
           </div>
           <Link
-            href="#"
+            href="/prints"
             className="group flex items-center gap-3 text-sm text-ink/80 transition-colors hover:text-ink"
           >
             Browse all prints
@@ -59,9 +32,10 @@ export function PrintShop() {
         </div>
 
         <div className="reveal mt-10 grid gap-5 md:grid-cols-3">
-          {prints.map((print) => (
-            <article
-              key={print.title}
+          {featured.map((print) => (
+            <Link
+              key={print.slug}
+              href={`/prints/${print.slug}`}
               className="group flex flex-col overflow-hidden rounded-3xl border border-ink/8 bg-ink/[0.015] transition-all duration-300 hover:-translate-y-1 hover:border-ink/12 hover:shadow-[0_26px_60px_-34px_rgba(23,21,15,0.5)]"
             >
               <div className="relative aspect-[3/2] overflow-hidden">
@@ -79,7 +53,7 @@ export function PrintShop() {
 
               <div className="flex flex-1 flex-col p-6">
                 <p className="text-[11px] tracking-[0.14em] text-gold uppercase">
-                  {print.series}
+                  {print.place}
                 </p>
                 <h3 className="mt-2 font-display text-xl text-ink">
                   {print.title}
@@ -88,11 +62,11 @@ export function PrintShop() {
                 <div className="mt-4 flex items-center gap-5 text-[12px] text-muted">
                   <span className="inline-flex items-center gap-1.5 tabular-nums">
                     <Ruler className="size-3.5" strokeWidth={1.5} />
-                    {print.size}
+                    {print.sizes[0].label}
                   </span>
                   <span className="inline-flex items-center gap-1.5">
                     <Frame className="size-3.5" strokeWidth={1.5} />
-                    {print.paper}
+                    Cotton rag
                   </span>
                 </div>
 
@@ -100,7 +74,7 @@ export function PrintShop() {
                   <p className="text-[12px] text-muted">
                     from{" "}
                     <span className="font-display text-xl text-ink tabular-nums">
-                      {print.price}
+                      {formatGBP(print.sizes[0].price)}
                     </span>
                   </p>
                   <span className="grid size-9 place-items-center rounded-full border border-ink/15 text-ink transition-all group-hover:border-ink group-hover:bg-ink group-hover:text-cream">
@@ -108,7 +82,7 @@ export function PrintShop() {
                   </span>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </Container>

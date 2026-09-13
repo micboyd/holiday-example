@@ -106,3 +106,14 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+/* While a nav panel is open the bar goes solid and drops its underline, so the
+   bar and the panel read as one continuous surface rather than two boxes.
+   (!important because the scroll-driven dock animation sets these too.) */
+header:has(nav > div:hover) .header-shell,
+header:has(nav > div:focus-within) .header-shell {
+  background-color: #ffffff !important;
+  backdrop-filter: none !important;
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+}

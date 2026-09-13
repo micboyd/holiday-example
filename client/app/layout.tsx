@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,9 +20,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Roamora — Landscape Photography",
+  title: "Michael Boyd — Landscape Photography",
   description:
-    "Landscape photography and fine art prints, made on foot between 2022 and 2024.",
+    "Landscape photographer. Fine art prints from work made on foot between 2022 and 2024.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -29,7 +31,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {/* Column layout so the footer is pushed to the bottom of the viewport
+            on short pages instead of leaving a band of background beneath it.
+            dvh rather than vh so mobile browser chrome doesn't reintroduce it. */}
+        <div className="flex min-h-dvh flex-col bg-cream">
+          <SiteHeader />
+          <div className="flex-1">{children}</div>
+          <SiteFooter />
+        </div>
+      </body>
     </html>
   );
 }
