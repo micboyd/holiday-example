@@ -10,4 +10,8 @@ export const images = {
   bali: unsplash("1537996194471-e657df975ab4", 800),
   alps: unsplash("1476514525535-07fb3b4ae5f1", 800),
   maldives: unsplash("1573843981267-be1999ff37cd", 800),
+  paris: unsplash("1502602898657-3e91760cbb34", 800),
+  vienna: unsplash("1516550893923-42d28e5677af", 800),
+  bavaria: unsplash("1467269204594-9661b134dd2b", 800),
+  himalaya: unsplash("1454496522488-7a8e488e8606", 800),
 };

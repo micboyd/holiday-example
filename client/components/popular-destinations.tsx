@@ -46,7 +46,7 @@ export function PopularDestinations() {
 
         {/* Bento: one tall feature card beside a 2x2 of smaller ones. */}
         <div className="reveal mt-10 grid gap-4 sm:grid-cols-2 lg:h-[640px] lg:grid-cols-4 lg:grid-rows-2">
-          {destinations.map((destination, index) => (
+          {destinations.slice(0, layout.length).map((destination, index) => (
             <article
               key={destination.name}
               className={`group relative aspect-[4/5] overflow-hidden rounded-3xl bg-sand lg:aspect-auto lg:h-full ${layout[index].className}`}

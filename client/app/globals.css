@@ -131,3 +131,12 @@ header:has(nav > div:focus-within) .header-shell {
     opacity: 0;
   }
 }
+
+/* Horizontal carousels: keep the scrollbar out of the design. */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

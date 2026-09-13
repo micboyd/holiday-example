@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { destinations } from "@/lib/destinations";
 import { experiences } from "@/lib/experiences";
+import { DestinationsCarousel } from "./destinations-carousel";
 import { images } from "@/lib/images";
 
 /** Intro column beside four photo cards — the Destinations panel. */
@@ -33,32 +33,7 @@ export function DestinationsPanel() {
         </Link>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        {destinations.map((destination) => (
-          <Link
-            key={destination.name}
-            href="#"
-            className="group/card relative aspect-[4/5] overflow-hidden rounded-xl bg-sand ring-1 ring-ink/5 transition-shadow duration-300 hover:shadow-[0_16px_30px_-18px_rgba(23,21,15,0.55)]"
-          >
-            <Image
-              src={destination.image}
-              alt={destination.name}
-              fill
-              sizes="240px"
-              className="object-cover transition-transform duration-500 group-hover/card:scale-110"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(17,15,11,0.9)_0%,rgba(17,15,11,0)_68%)]" />
-            <div className="absolute inset-x-0 bottom-0 p-3.5">
-              <p className="font-display text-[15px] leading-none text-white">
-                {destination.name}
-              </p>
-              <p className="mt-1.5 text-[11px] text-white/60 tabular-nums">
-                ★ {destination.rating} ({destination.reviews})
-              </p>
-            </div>
-          </Link>
-        ))}
-      </div>
+      <DestinationsCarousel />
     </div>
   );
 }
