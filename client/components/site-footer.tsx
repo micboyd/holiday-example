@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Leaf } from "lucide-react";
+import { ArrowRight, Aperture } from "lucide-react";
 import { Container } from "./container";
 import { Logo } from "./logo";
 import {
@@ -11,16 +11,16 @@ import {
 
 const columns = [
   {
-    heading: "Explore",
-    links: ["Santorini", "Bali", "Swiss Alps", "Maldives", "All destinations"],
+    heading: "Work",
+    links: ["Moraine", "Above the Cloud", "Granite", "Kluane", "The archive"],
   },
   {
-    heading: "Company",
-    links: ["About us", "Our guides", "Journal", "Careers"],
+    heading: "Prints",
+    links: ["Sizes & papers", "Framing", "Shipping", "Care & returns"],
   },
   {
-    heading: "Help",
-    links: ["Contact", "FAQs", "Booking terms", "Privacy"],
+    heading: "Studio",
+    links: ["About", "Journal", "Exhibitions", "Contact"],
   },
 ];
 
@@ -45,14 +45,14 @@ export function SiteFooter() {
           {/* The closing invitation, not a link dump */}
           <div>
             <p className="text-[11px] font-medium tracking-[0.2em] text-gold uppercase">
-              Stay curious
+              Field notes
             </p>
             <h2 className="mt-5 max-w-[15ch] font-display text-4xl leading-[1.08] font-normal tracking-[-0.01em] lg:text-[46px]">
-              Where should we send you next?
+              New work, once a month.
             </h2>
             <p className="mt-5 max-w-[44ch] text-[14px] leading-relaxed text-cream/55">
-              One letter a month — a place worth seeing, the right time to go,
-              and what it honestly costs.
+              A short letter when a series is finished — what I was trying to
+              make, and what it took to get there.
             </p>
 
             <form className="group mt-9 flex max-w-md items-center gap-2 rounded-full border border-cream/15 bg-cream/[0.06] py-1.5 pr-1.5 pl-5 transition-colors focus-within:border-cream/35">
@@ -72,8 +72,8 @@ export function SiteFooter() {
             </form>
 
             <p className="mt-4 flex items-center gap-2 text-[11px] text-cream/35">
-              <Leaf className="size-3.5 text-gold/70" strokeWidth={1.5} />
-              Carbon-neutral journeys · Unsubscribe anytime
+              <Aperture className="size-3.5 text-gold/70" strokeWidth={1.5} />
+              Printed and shipped from the studio · Unsubscribe anytime
             </p>
           </div>
 

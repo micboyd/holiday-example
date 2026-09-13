@@ -4,14 +4,14 @@ const unsplash = (id: string, w: number) =>
   `https://images.unsplash.com/photo-${id}?w=${w}&q=80&auto=format&fit=crop`;
 
 export const images = {
-  hero: unsplash("1527668752968-14dc70a27c95", 1920),
-  promo: unsplash("1469474968028-56623f02e42e", 1600),
-  santorini: unsplash("1533105079780-92b9be482077", 800),
-  bali: unsplash("1537996194471-e657df975ab4", 800),
-  alps: unsplash("1476514525535-07fb3b4ae5f1", 800),
-  maldives: unsplash("1573843981267-be1999ff37cd", 800),
-  paris: unsplash("1502602898657-3e91760cbb34", 800),
-  vienna: unsplash("1516550893923-42d28e5677af", 800),
-  bavaria: unsplash("1467269204594-9661b134dd2b", 800),
-  himalaya: unsplash("1454496522488-7a8e488e8606", 800),
+  hero: unsplash("1470071459604-3b5ec3a7fe05", 1920),
+  exhibition: unsplash("1469474968028-56623f02e42e", 1600),
+  moraine: unsplash("1493246507139-91e8fad9978e", 900),
+  inversion: unsplash("1458668383970-8ddd3927deed", 900),
+  granite: unsplash("1426604966848-d7adac402bff", 900),
+  kluane: unsplash("1464822759023-fed622ff2c3b", 900),
+  ridgelines: unsplash("1501854140801-50d01698950b", 900),
+  understory: unsplash("1441974231531-c6227db76b6e", 900),
+  nightfall: unsplash("1519681393784-d120267933ba", 900),
+  tideline: unsplash("1507525428034-b723cf961d3e", 900),
 };

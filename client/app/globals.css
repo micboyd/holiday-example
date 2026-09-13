@@ -53,10 +53,12 @@ body {
 
 @keyframes header-dock {
   to {
-    background-color: rgba(250, 248, 244, 0.8);
-    backdrop-filter: blur(14px) saturate(1.4);
-    border-color: rgba(23, 21, 15, 0.08);
-    box-shadow: 0 12px 32px -26px rgba(23, 21, 15, 0.55);
+    /* Clear white rather than cream: the page is white, so a warm tint read as
+       a dingy stripe. Translucent + blurred so photographs soften behind it. */
+    background-color: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(18px) saturate(1.25);
+    border-color: rgba(23, 21, 15, 0.07);
+    box-shadow: 0 10px 30px -28px rgba(23, 21, 15, 0.45);
   }
 }
 

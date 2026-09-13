@@ -18,9 +18,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Roamora — Explore Beyond Limits",
+  title: "Roamora — Landscape Photography",
   description:
-    "Discover breathtaking destinations, unforgettable experiences, and memories that last a lifetime.",
+    "Landscape photography and fine art prints, made on foot between 2022 and 2024.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

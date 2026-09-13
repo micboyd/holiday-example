@@ -6,10 +6,10 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { destinations } from "@/lib/destinations";
-import { experiences } from "@/lib/experiences";
+import { printOptions } from "@/lib/print-options";
+import { series } from "@/lib/series";
 
-const plainItems = ["Hotels", "Tours", "Deals", "About Us"];
+const plainItems = ["About", "Journal", "Contact"];
 
 function Section({
   label,
@@ -96,25 +96,23 @@ export function MobileMenu() {
             <div className="px-6 pb-12">
               <nav>
                 <Section
-                  label="Destinations"
-                  isOpen={section === "destinations"}
+                  label="Work"
+                  isOpen={section === "work"}
                   onToggle={() =>
-                    setSection(
-                      section === "destinations" ? null : "destinations",
-                    )
+                    setSection(section === "work" ? null : "work")
                   }
                 >
                   <div className="grid grid-cols-2 gap-3">
-                    {destinations.map((destination) => (
+                    {series.map((entry) => (
                       <Link
-                        key={destination.name}
+                        key={entry.title}
                         href="#"
                         onClick={close}
                         className="relative aspect-[4/3] overflow-hidden rounded-xl bg-sand"
                       >
                         <Image
-                          src={destination.image}
-                          alt={destination.name}
+                          src={entry.image}
+                          alt={entry.title}
                           fill
                           sizes="50vw"
                           className="object-cover"
@@ -122,10 +120,10 @@ export function MobileMenu() {
                         <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(17,15,11,0.88)_0%,rgba(17,15,11,0)_68%)]" />
                         <div className="absolute inset-x-0 bottom-0 p-3">
                           <p className="font-display text-[14px] leading-none text-white">
-                            {destination.name}
+                            {entry.title}
                           </p>
-                          <p className="mt-1 text-[10px] text-white/60 tabular-nums">
-                            ★ {destination.rating}
+                          <p className="mt-1 text-[10px] text-white/60">
+                            {entry.place}
                           </p>
                         </div>
                       </Link>
@@ -134,14 +132,14 @@ export function MobileMenu() {
                 </Section>
 
                 <Section
-                  label="Experiences"
-                  isOpen={section === "experiences"}
+                  label="Prints"
+                  isOpen={section === "prints"}
                   onToggle={() =>
-                    setSection(section === "experiences" ? null : "experiences")
+                    setSection(section === "prints" ? null : "prints")
                   }
                 >
                   <ul className="grid gap-1">
-                    {experiences.map(({ icon: Icon, title, copy }) => (
+                    {printOptions.map(({ icon: Icon, title, copy }) => (
                       <li key={title}>
                         <Link
                           href="#"
@@ -182,7 +180,7 @@ export function MobileMenu() {
                 onClick={close}
                 className="mt-8 flex items-center justify-center rounded-full bg-ink py-3.5 text-sm font-medium text-cream"
               >
-                Contact Us
+                Enquire
               </Link>
             </div>
           </div>,

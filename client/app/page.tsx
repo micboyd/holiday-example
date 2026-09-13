@@ -1,9 +1,8 @@
-import { DestinationTiles } from "@/components/destination-tiles";
-import { FeaturedTrips } from "@/components/featured-trips";
+import { Exhibition } from "@/components/exhibition";
 import { Hero } from "@/components/hero";
-import { TrendingDestinations } from "@/components/trending-destinations";
-import { PromoBanner } from "@/components/promo-banner";
-import { SearchBar } from "@/components/search-bar";
+import { PrintShop } from "@/components/print-shop";
+import { SelectedWork } from "@/components/selected-work";
+import { SeriesStrip } from "@/components/series-strip";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { Testimonials } from "@/components/testimonials";
@@ -14,11 +13,10 @@ export default function Home() {
       <SiteHeader />
       <main>
         <Hero />
-        <SearchBar />
-        <TrendingDestinations />
-        <DestinationTiles />
-        <FeaturedTrips />
-        <PromoBanner />
+        <SelectedWork />
+        <SeriesStrip />
+        <PrintShop />
+        <Exhibition />
         <Testimonials />
       </main>
       <SiteFooter />

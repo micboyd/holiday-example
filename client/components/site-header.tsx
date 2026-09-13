@@ -3,9 +3,9 @@ import { Container } from "./container";
 import { Logo } from "./logo";
 import { MobileMenu } from "./mobile-menu";
 import { NavMenu } from "./nav-menu";
-import { DestinationsPanel, ExperiencesPanel } from "./nav-panels";
+import { PrintsPanel, WorkPanel } from "./nav-panels";
 
-const plainItems = ["Hotels", "Tours", "Deals", "About Us"];
+const plainItems = ["About", "Journal", "Contact"];
 
 export function SiteHeader() {
   return (
@@ -16,11 +16,11 @@ export function SiteHeader() {
           <Logo className="text-ink" compact />
 
           <nav className="hidden items-center gap-8 lg:flex">
-            <NavMenu label="Destinations">
-              <DestinationsPanel />
+            <NavMenu label="Work">
+              <WorkPanel />
             </NavMenu>
-            <NavMenu label="Experiences">
-              <ExperiencesPanel />
+            <NavMenu label="Prints">
+              <PrintsPanel />
             </NavMenu>
             {plainItems.map((item) => (
               <Link
@@ -38,7 +38,7 @@ export function SiteHeader() {
               href="#"
               className="hidden rounded-full bg-ink px-6 py-2.5 text-sm font-medium text-cream transition-colors hover:bg-ink/85 sm:inline-flex"
             >
-              Contact Us
+              Enquire
             </Link>
             <MobileMenu />
           </div>
