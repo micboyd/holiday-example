@@ -19,9 +19,9 @@ const layout = [
   },
 ];
 
-export function PopularDestinations() {
+export function TrendingDestinations() {
   return (
-    <section className="pb-16 lg:pb-24">
+    <section className="pt-16 pb-16 lg:pt-24 lg:pb-24">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
@@ -29,7 +29,7 @@ export function PopularDestinations() {
               Explore the best
             </p>
             <h2 className="mt-3 font-display text-4xl font-normal tracking-[-0.01em] text-ink lg:text-[42px]">
-              Popular Destinations
+              Trending Destinations
             </h2>
           </div>
 

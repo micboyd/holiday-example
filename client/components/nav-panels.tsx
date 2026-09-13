@@ -15,7 +15,7 @@ export function DestinationsPanel() {
             Explore the best
           </p>
           <h3 className="mt-2.5 font-display text-[22px] leading-tight text-ink">
-            Popular destinations
+            Trending destinations
           </h3>
           <p className="mt-2 text-[12px] leading-relaxed text-muted">
             Over 120 places worldwide, handpicked by our local experts.

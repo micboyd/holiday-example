@@ -24,7 +24,7 @@ const reviews = [
 
 export function Testimonials() {
   return (
-    <section className="pb-16 lg:pb-24">
+    <section className="bg-blush py-16 lg:py-24">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
@@ -53,7 +53,7 @@ export function Testimonials() {
           {reviews.map((review) => (
             <figure
               key={review.name}
-              className="relative flex flex-col rounded-3xl border border-ink/8 bg-ink/[0.015] p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/30 hover:bg-white hover:shadow-[0_26px_60px_-34px_rgba(23,21,15,0.5)]"
+              className="relative flex flex-col rounded-3xl border border-ink/6 bg-white/60 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold/30 hover:bg-white hover:shadow-[0_26px_60px_-34px_rgba(23,21,15,0.5)]"
             >
               <Quote
                 className="size-7 text-gold/35"

@@ -6,7 +6,7 @@ import { Container } from "./container";
 
 export function PromoBanner() {
   return (
-    <section className="pb-16 lg:pb-24">
+    <section className="pb-16 lg:pb-20">
       <Container>
         <div className="reveal relative isolate overflow-hidden rounded-[28px]">
           <Image
